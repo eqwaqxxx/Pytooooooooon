@@ -1,0 +1,19 @@
+tbIcicha5 = 5000
+tbIcicha2 = 2000
+tbIcicha1 = 1000
+sotka5 = 500
+sotka2 = 200
+sotka1 = 100
+denga = int(input("Введите сумму кратнаую 100"))
+pat_tbIch = denga // tbIcicha5
+print(f"Дано{pat_tbIch} денег по 5000")
+dvetdIcachi = (denga % tbIcicha5) // tbIcicha2
+print(f"Дано {dvetdIcachi} денег по 2000")
+one_tbIcha = (denga % tbIcicha5 % tbIcicha2) // tbIcicha1
+print(f"Дано {one_tbIcha} денег по 1000")
+pat_sotka = (denga % tbIcicha5% tbIcicha2 % tbIcicha1) // sotka5
+print(f"Дано {pat_sotka} денег по 500")
+dve_sotki =(denga% tbIcicha5 % tbIcicha2 % tbIcicha1 % sotka5) // sotka2
+print(f"Дано {dve_sotki} денег по 200")
+one_sotka = (denga % tbIcicha5% tbIcicha2 % tbIcicha1 % sotka5 % sotka2) // sotka1
+print(f"Дано {one_sotka} денег по 200")
