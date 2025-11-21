@@ -1,10 +1,10 @@
 x1, y1  = map(int,input("Введите расположение первой клетки: ").split())
 x2, y2 = map(int,input("Введите расположение первой второй: ").split())
 
-if not (1 <= x1 <= 8 and 1 <= y1 <= 8 and 1 <= x2 <= 8 and 1 <= y2 <= 8):
-    print("NE V ChAHMATAX")
-else:
+if 1 <= x1 <= 8 and 1 <= y1 <= 8 and 1 <= x2 <= 8 and 1 <= y2 <= 8:
     if (x1 + y1) % 2 == (x2 + y2) % 2:
         print("YES")
     else:
         print("NO")
+else:
+    print("NO")
