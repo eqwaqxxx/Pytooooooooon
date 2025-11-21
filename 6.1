@@ -1,9 +1,10 @@
 temperatura = float(input("Ваша температура: "))
-Davlenie = int(input("Ваще давление: "))
-Puls = int(input("Ващ пульс: "))
-if 36 <= temperatura <= 37 and 110 <= Davlenie <= 130 and  60<= Puls <= 100 :
+davlenie = int(input("Ваще давление: "))
+puls = int(input("Ващ пульс: "))
+
+if 36 <= temperatura <= 37 and 110 <= davlenie <= 130 and  60<= Puls <= 100 :
     print("У вас норма")
-elif 35 <= temperatura <= 38 or 105 <= Davlenie <= 110 or 130 <= Davlenie <= 140 or 55 <= Puls <= 60 or 100 <= Puls <= 110:
-    print("Тебе плохоовато")
-else:
+elif 38 <= temperatura or temperatura <= 35 or   140 <= davlenie or   davlenie <= 105 or  110 <= puls or  puls <= 55  :
     print("Ты умрешь")
+else:
+    print("тебе плоховато")
