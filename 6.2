@@ -1,0 +1,16 @@
+korman = int(input("Введите номе6р кармашка: "))
+if 0  <= korman <= 36 :
+    if korman == 0 :
+        print("Карман зеленый")
+    elif 1 <= korman <=  10 or 19 <= korman <= 28:
+        if korman % 2 ==0:
+            print("Карман черный")
+        else :
+            print("Карман карсный")
+    elif 11 <= korman <= 18 or 29 <= korman <= 36:
+        if korman % 2 ==0 :
+            print("Карман карсный")
+        else:
+            print("Карман черный")
+else:
+    print("Число ннне в диапозоне")
