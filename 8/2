@@ -1,0 +1,12 @@
+print("Введите 10 целых чисел")
+itogo = 0
+for i in range(10):
+    a = int(input("Введите число:"))
+    if a % 2 == 0:
+        itogo += 1
+    else:
+        itogo = itogo
+if itogo  == 10:
+    print(f"yes")
+else:
+    print(f"no")
