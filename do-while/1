@@ -1,0 +1,12 @@
+
+attempt =  0
+
+while True:
+    passwod = input("Enter your password: ")
+    attempt += 1
+    if passwod == "админь":
+        print("yra")
+        break
+    if attempt >= 3:
+        print("You have reached the maximum attempt")
+        break
