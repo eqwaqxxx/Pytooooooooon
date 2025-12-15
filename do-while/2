@@ -1,0 +1,8 @@
+nachalnoe = 1
+while True:
+    chislo = int(input("Enter chislo: "))
+    if chislo >= 0:
+        nachalnoe  = nachalnoe * chislo
+    else:
+        break
+print(nachalnoe)
