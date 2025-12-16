@@ -1,0 +1,26 @@
+balanc = 1000
+
+while True:
+    print("1. Узнать баланс")
+    print("2. Снять 100 руб")
+    print("3. Положить 100 руб")
+    print("4. Выход")
+    vibor = input("Введите 1 из команд: ")
+    match vibor:
+        case "1":
+            print(f"Ваш баланс = {balanc}")
+        case "2":
+            if balanc < 100:
+                print("НА вашем счету недостаточно средств")
+            else:
+                balanc = balanc - 100
+                print("Снято 100 рублей")
+        case "3":
+            balanc = balanc + 100
+            print("ДОбавлено 100 рублей")
+            print()
+        case "4":
+            print("До свидания")
+            break
+        case _:
+            print("НЕверная команда")
