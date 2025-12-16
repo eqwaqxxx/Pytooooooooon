@@ -1,0 +1,8 @@
+print("Кодовый замок")
+while True:
+    passwod = input("Enter your password: ")
+    if passwod == "4590":
+        print("ДОСтуп крч ты молодец")
+        break
+    else:
+        print("ТЫ не угадал, попробуй снова")
