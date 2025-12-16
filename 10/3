@@ -1,0 +1,9 @@
+print("ЧТобы остановится введи 0")
+chislo = int(input("Введи числол: "))
+while True:
+    chisla = int(input("Введи числол: "))
+    if chisla > chislo:
+        chislo = chisla
+    elif chisla == 0:
+        break
+print(chislo)
