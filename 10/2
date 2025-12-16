@@ -1,0 +1,15 @@
+chislo1 = int(input("Введи первое число: "))
+
+while True:
+    chislo2 = int(input("Введи 2 число: "))
+    if chislo1 >= chislo2:
+        print("ВТорое число должно быть больше")
+    else:
+        break
+while True:
+    chislo3 = int(input("Введи 3 число: "))
+    if chislo2 >= chislo3:
+        print("третье число должно быть большк")
+    else:
+        print("ПРинято")
+        break
