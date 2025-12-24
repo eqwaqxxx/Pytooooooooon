@@ -1,0 +1,12 @@
+n = int(input("Введите число до которого идет цикл"))
+i = 0
+while i < n:
+    i = i + 1
+
+    if 5<=i<=9:
+        continue
+    elif 17<=i<=37:
+        continue
+    elif 78<=i<=87:
+        continue
+    print(i)
