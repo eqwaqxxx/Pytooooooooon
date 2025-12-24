@@ -1,0 +1,33 @@
+n = int(input("Введите целое число: "))
+poslidnai = n % 10
+chislo3 = 0
+chislo_poslidnai = 0
+chetnoe_chislo = 0
+sum5 = 0
+proizvedenie_7 = 1
+kolvo7 = False
+ckolko_chisel_5_0 = 0
+
+while n>0:
+    f = n % 10
+    if f == 3:
+        chislo3 = chislo3 + 1
+    if f == poslidnai:
+        chislo_poslidnai = chislo_poslidnai + 1
+    if f % 2 == 0:
+        chetnoe_chislo = chetnoe_chislo + 1
+    if f > 7:
+        proizvedenie_7 = proizvedenie_7 * f
+        kolvo7 = True
+    if f > 5:
+        sum5 = sum5 + f
+    if f == 0 or f == 5:
+        ckolko_chisel_5_0 = 1 + ckolko_chisel_5_0
+    n //= 10
+print(f"Колво цифр 3: {chislo3}")
+print(f"сколько раз встречается последняя цифра: {chislo_poslidnai}")
+print(f"количество чётных цифр: {chetnoe_chislo}")
+print(f"сумму его цифр, больших пяти: {sum5}")
+print(f"произведение цифр, больших семи: {proizvedenie_7}")
+print(f"сколько раз в нём встречаются цифры 0 и 5: {ckolko_chisel_5_0}")
+
