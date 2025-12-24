@@ -1,0 +1,23 @@
+price = int(input("Enter the price you want: "))
+kolvodeneg25 = 0
+kolvodeneg5 = 0
+kolvodeneg10 = 0
+kolvodeneg1 = 0
+while price >= 25:
+    price -= 25
+    kolvodeneg25 += 1
+while price >= 10:
+    price -= 10
+    kolvodeneg10 += 1
+while price >= 5:
+    price -= 5
+    kolvodeneg5 += 1
+while price >= 1:
+    price -= 1
+    kolvodeneg1 += 1
+print(f""" Вы дожны ему {kolvodeneg25} по 25 
+Вы дожны ему {kolvodeneg10} по 10 
+Вы дожны ему {kolvodeneg5} по 5 
+Вы дожны ему {kolvodeneg1} по 1 
+
+""")
