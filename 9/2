@@ -1,0 +1,11 @@
+while True:
+    name=input("Enter  name: ")
+    if name=="Александра":
+        break
+coint =  0 
+while True:
+    name=input("Enter  name: ")
+    if name == "Левон"
+        print(coint)
+        break
+    coint += 1
