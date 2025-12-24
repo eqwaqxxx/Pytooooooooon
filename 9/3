@@ -1,0 +1,10 @@
+price = 0
+while True:
+    chisla = int(input("Enter chisla: "))
+    if chisla < 0:
+        print("ошибка")
+        continue
+    elif chisla == 0:
+        break
+    price += chisla
+print(f"Сумма {price}")
