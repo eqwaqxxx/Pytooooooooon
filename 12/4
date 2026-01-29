@@ -1,0 +1,9 @@
+marks = [5, 4, 3, 5, 2, 5, 4, 3, 5, 5]
+koclo5 = 0
+koclo2 = 0
+for mark in marks:
+    if mark == 5:
+        koclo5 += 1
+    if mark == 2:
+        koclo2 += 1
+print(f"Количество пятерок {koclo5}  Количество двоек{koclo2}")
