@@ -1,0 +1,6 @@
+n = int(input("Vvedite chislo: "))
+chislo = [ ]
+if n >=1 :
+    for i in range(1,n+1,2):
+        chislo.append(i)
+print(chislo)
