@@ -1,0 +1,4 @@
+prices = [1500, 500, 2000, 3500, 1000, 4500]
+print("min chislo = ",min(prices),"; MAX chislo = ", max(prices))
+print("Общая стоимость",sum(prices))
+print("СРедняя цена",sum(prices)/len(prices))
