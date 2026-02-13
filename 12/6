@@ -1,0 +1,8 @@
+slovo= list(input())
+obtatnyi = slovo[::-1]
+if slovo == obtatnyi:
+    print("Палиндром")
+else:
+    print(" не Палиндром")
+print(obtatnyi)
+print(slovo)
