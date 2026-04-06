@@ -1,0 +1,9 @@
+import random
+spisok = [random.randint(1,30) for i in range(5)]
+print(f"Изаначльный список: {spisok}")
+for i in range(len(spisok)):
+    if spisok[i] == min(spisok):
+        print(spisok[i])
+        minindex = i
+spisok[0],spisok[minindex] = spisok[minindex],spisok[0]
+print(spisok)
