@@ -1,0 +1,17 @@
+stroka = input()
+chisla = stroka.split('.')
+
+if len(chisla) == 4:
+    korrektno = True
+    for chislo_str in chisla:
+        chislo = int(chislo_str)
+        if chislo < 0 or chislo > 255:
+            korrektno = False
+            break
+
+    if korrektno:
+        print("ДА")
+    else:
+        print("НЕТ")
+else:
+    print("НЕТ")
