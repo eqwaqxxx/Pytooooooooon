@@ -1,0 +1,7 @@
+chisla = [8, 9, 10, 11]
+chisla[1] = 17
+chisla.extend([4, 5, 6])
+del chisla[0]
+chisla = chisla * 2
+chisla.insert(3, 25)
+print(chisla)
