@@ -1,0 +1,14 @@
+vhodnaya_stroka = input()
+spisok_chisel = vhodnaya_stroka.split()
+
+kolichestvo_par = 0
+vsego_elementov = len(spisok_chisel)
+
+for i in range(vsego_elementov):
+    for j in range(i + 1, vsego_elementov):
+        if spisok_chisel[i] == spisok_chisel[j]:
+            kolichestvo_par += 1
+
+print(kolichestvo_par)
+
+
