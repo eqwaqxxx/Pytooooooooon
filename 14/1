@@ -1,1 +1,27 @@
-print
+printimport random
+
+matrica = []
+for i in range(3):
+    stroka = []
+    for j in range(4):
+        sluchaynoe_chislo = random.randint(1, 100)
+        stroka.append(sluchaynoe_chislo)
+    matrica.append(stroka)
+
+print("Наш список:")
+print(matrica)
+
+maks_chislo = matrica[0][0]
+indeks_stroki = 0
+indeks_v_stroke = 0
+
+for i in range(len(matrica)):
+    for j in range(len(matrica[i])):
+        if matrica[i][j] > maks_chislo:
+            maks_chislo = matrica[i][j]
+            indeks_stroki = i
+            indeks_v_stroke = j
+
+print(f"Максимум: {maks_chislo}")
+print(f"Строка: {indeks_stroki}")
+print(f"ГеоПозиция: {indeks_v_stroke}")
