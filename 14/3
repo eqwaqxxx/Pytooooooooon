@@ -1,1 +1,26 @@
+import random
+ishodniy_spisok = []
+for i in range(1):
+    stroka = []
+    for j in range(4):
+        chislo = random.randint(-10, 10)
+        stroka.append(chislo)
+    ishodniy_spisok.append(stroka)
 
+noviy_spisok = []
+
+for i in range(len(ishodniy_spisok)):
+    polozhitelnaya_stroka = []
+
+    for j in range(len(ishodniy_spisok[i])):
+        if ishodniy_spisok[i][j] > 0:
+            polozhitelnaya_stroka.append(ishodniy_spisok[i][j])
+
+    noviy_spisok.append(polozhitelnaya_stroka)
+
+print("Исходный список:")
+for stroka in ishodniy_spisok:
+    print(stroka)
+print("Отфильтрованный список (только > 0):")
+for stroka in noviy_spisok:
+    print(stroka)
