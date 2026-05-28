@@ -1,0 +1,10 @@
+N = int(input())
+predmet = list(map(int, input().split()))
+predmet.sort(reverse=True)
+max_razmer = 0
+for i in range(min(N, len(predmet))):
+    if predmet[i] > 0:
+        max_razmer += predmet[i]
+    else:
+        break
+print(max_razmer)
