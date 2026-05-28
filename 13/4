@@ -1,4 +1,4 @@
-stroka = input()
+stroka = input("Введите айпи адрес")
 chisla = stroka.split('.')
 
 if len(chisla) == 4:
@@ -12,6 +12,6 @@ if len(chisla) == 4:
     if korrektno:
         print("ДА")
     else:
-        print("НЕТ")
+        print("НЕТо")
 else:
-    print("НЕТ")
+    print("НЕТо")
