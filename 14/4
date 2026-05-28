@@ -1,0 +1,13 @@
+import random
+spisok = []
+for i in range(10):
+    spisokis = [random.randint(-10,10) for j in range(5)]
+    spisok.append(spisokis)
+    print(spisokis)
+find = int(input("Введите число из списка "))
+poiski = []
+for i in range(len(spisok)):
+    for j in range(len(spisok[i])):
+        if spisok[i][j] == find:
+            poiski.append((i,j))
+print(poiski)
