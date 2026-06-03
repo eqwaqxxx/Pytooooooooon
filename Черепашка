@@ -2,6 +2,7 @@ import turtle
 # --- Настройки экрана ---
 t = turtle.Turtle()
 t.speed(-100)
+#turtle.tracer(0, 0)
 t.hideturtle()
 screen = turtle.Screen()
 screen.bgcolor("lightblue")
