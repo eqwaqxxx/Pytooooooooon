@@ -1,0 +1,180 @@
+import turtle
+# --- Настройки экрана ---
+t = turtle.Turtle()
+t.speed(-100)
+t.hideturtle()
+screen = turtle.Screen()
+screen.bgcolor("lightblue")
+screen.setup(width=800, height=700)
+
+# =====================================================
+# ПАРА 1 — СОЛНЫШКО
+# =====================================================
+SUN_RANGE = 16
+SUN_WIDTH = 6
+SUN_FORWARD = 90
+SUN_CIRCLE = 60
+SUN_COLOR1 = "orange"
+SUN_COLOR2 = "yellow"
+def create_sun(x1, y1, x2, y2):
+    sun = t.color(SUN_COLOR1)
+    t.width(SUN_WIDTH)
+    for i in range(SUN_RANGE):
+     t.penup()
+     t.goto(x1, y1)
+     t.pendown()
+     t.setheading(i * 22.5)
+     t.forward(SUN_FORWARD)
+    t.width(1)
+    t.penup()
+    t.goto(x2,y2)
+    t.pendown()
+    t.color(SUN_COLOR2)
+    t.begin_fill()
+    t.circle(SUN_CIRCLE)
+    t.end_fill()
+    return sun
+picture = create_sun(200, 250, 178, 190)
+
+GRASS_COLOR = "green"
+BLADE_COUNT = 10
+START_X = -400
+START_Y = -340
+GRASS_RANGE = 80
+GRASS_FORWARD = 10
+BLADE_CIRCLE = 70
+t.color(GRASS_COLOR)
+for i in range(GRASS_RANGE):
+    t.penup()
+    t.goto(START_X + i * BLADE_COUNT, START_Y)
+    t.pendown()
+    d = 1 if i % 2 == 0 else -1
+    t.setheading(75 + (i % 5) * 10)
+    t.width(3 - (i % 2))
+    n = BLADE_CIRCLE + (i % 2)
+    for j in range(int(n / 10)):
+        t.forward(GRASS_FORWARD)
+        t.left(5 * d)
+    t.width(1)
+
+# =====================================================
+# ПАРА 3 — ЦВЕТОК
+# =====================================================
+STEM_COLOR = "darkgreen"
+STEM_WIDTH = 4
+STEM_X = 0
+STEM_Y = -350
+STEM_SETHEADING = 90
+STEM_FORWARD = 150
+PETAL_COLOR = "pink"
+PETAL_WIDTH = 1
+PETAL_RADIUS = 40
+CENTER_COLOR = "yellow"
+CENTER_RADIUS = 30
+t.color(STEM_COLOR)
+t.width(STEM_WIDTH)
+t.penup()
+t.goto(STEM_X, STEM_Y)
+t.pendown()
+t.setheading(STEM_SETHEADING)
+t.forward(STEM_FORWARD)
+t.width(PETAL_WIDTH)
+t.color(PETAL_COLOR)
+for i in range(8):
+    t.penup()
+    t.goto(0, -180)
+    t.pendown()
+    t.setheading(i * 45)
+    t.begin_fill()
+    t.circle(PETAL_RADIUS, 180)
+    t.circle(PETAL_RADIUS, 180)
+    t.end_fill()
+t.penup()
+t.goto(-20, -200)
+t.pendown()
+t.color(CENTER_COLOR)
+t.begin_fill()
+t.circle(CENTER_RADIUS)
+t.end_fill()
+
+# =====================================================
+# ПАРА 4 — СЕРДЕЧКО
+# =====================================================
+HEART_COLOR = "red"
+HEART_FORWARD1 = 62
+HEART_SETHEADING1 = 140
+HEART_FORWARD2 = 62
+HEART_SETHEADING2 = 60
+HEART_RADIUS = -35
+t.penup()
+t.goto(-300, 40)
+t.pendown()
+t.color(HEART_COLOR)
+t.begin_fill()
+t.setheading(HEART_SETHEADING1)
+t.forward(HEART_FORWARD1)
+t.circle(HEART_RADIUS, 200)
+t.setheading(HEART_SETHEADING2)
+t.circle(HEART_RADIUS, 200)
+t.forward(HEART_FORWARD2)
+t.end_fill()
+
+t.penup()
+t.goto(300, 40)
+t.pendown()
+t.color(HEART_COLOR)
+t.begin_fill()
+t.setheading(HEART_SETHEADING1)
+t.forward(HEART_FORWARD1)
+t.circle(HEART_RADIUS, 200)
+t.setheading(HEART_SETHEADING2)
+t.circle(HEART_RADIUS, 200)
+t.forward(HEART_FORWARD2)
+
+t.end_fill()
+
+# НАДПИСЬ
+MAIN_TEXT_COLOR = "purple"
+SUB_TEXT1_COLOR = "deeppink"
+SUB_TEXT2_COLOR = "blue"
+MAIN_TEXT_SIZE = 36
+SUB_TEXT1_SIZE = 20
+SUB_TEXT2_SIZE = 14
+t.penup()
+t.goto(0, 15)
+t.pendown()
+t.color(MAIN_TEXT_COLOR)
+t.write("С 8 Марта!", align="center", font=("Arial", MAIN_TEXT_SIZE, "bold"))
+t.penup()
+t.goto(0, -10)
+t.pendown()
+t.color(SUB_TEXT1_COLOR)
+t.write("Дорогие женщины!", align="center", font=("Arial", SUB_TEXT1_SIZE, "italic"))
+t.penup()
+t.goto(0, -35)
+t.pendown()
+t.color(SUB_TEXT2_COLOR)
+t.write("Пусть каждый день будет ярким!", align="center", font=("Arial", SUB_TEXT2_SIZE, "italic"))
+
+# =====================================================
+# ПАРА 2 — ОБЛАКО
+# =====================================================
+CLOUD_COLOR = "white"
+t.color(CLOUD_COLOR)
+coords = [
+    (80, 280, 40),
+    (50, 260, 30),
+    (110, 260, 30),
+    (30, 250, 25),
+    (130, 250, 25),
+    (80, 270, 35)
+]
+for circle_x, circle_y, radius in coords:
+    t.penup()
+    t.goto(circle_x, circle_y - radius)
+    t.pendown()
+    t.begin_fill()
+    t.circle(radius)
+    t.end_fill()
+
+turtle.done()
