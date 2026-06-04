@@ -1,7 +1,7 @@
 import turtle
 # --- Настройки экрана ---
 t = turtle.Turtle()
-t.speed(-100)
+t.speed(0)
 turtle.tracer(0, 0)
 t.hideturtle()
 screen = turtle.Screen()
@@ -36,26 +36,24 @@ def create_sun(x1, y1, x2, y2):
     t.end_fill()
     return sun
 
-GRASS_COLOR = "green"
-BLADE_COUNT = 10
-START_X = -400
-START_Y = -340
-GRASS_RANGE = 80
+BLADE_COUNT = 20
+GRASS_RANGE = 50
 GRASS_FORWARD = 10
 BLADE_CIRCLE = 70
-t.color(GRASS_COLOR)
-for i in range(GRASS_RANGE):
-    t.penup()
-    t.goto(START_X + i * BLADE_COUNT, START_Y)
-    t.pendown()
-    d = 1 if i % 2 == 0 else -1
-    t.setheading(75 + (i % 5) * 10)
-    t.width(3 - (i % 2))
-    n = BLADE_CIRCLE + (i % 2)
-    for j in range(int(n / 10)):
-        t.forward(GRASS_FORWARD)
-        t.left(5 * d)
-    t.width(1)
+def create_grass(x, y, color):
+    t.color(color)
+    for i in range(GRASS_RANGE):
+        t.penup()
+        t.goto(x + i * BLADE_COUNT, y)
+        t.pendown()
+        d = 1 if i % 2 == 0 else -1
+        t.setheading(75 + (i % 5) * 10)
+        t.width(3 - (i % 2))
+        n = BLADE_CIRCLE + (i % 2)
+        for j in range(int(n / 10)):
+            t.forward(GRASS_FORWARD)
+            t.left(5 * d)
+        t.width(1)
 
 # =====================================================
 # ПАРА 3 — ЦВЕТОК
@@ -65,9 +63,9 @@ STEM_WIDTH = 4
 STEM_SETHEADING = 90
 STEM_FORWARD = 150
 PETAL_WIDTH = 1
-PETAL_RADIUS = 40
+PETAL_RADIUS = 30
 CENTER_COLOR = "yellow"
-CENTER_RADIUS = 30
+CENTER_RADIUS = 20
 CENTER_X = -20
 CENTER_Y = -200
 def create_petal(PETAL_COLOR,x1,y1, x2, y2, x3, y3):
@@ -127,22 +125,12 @@ SUB_TEXT2_COLOR = "blue"
 MAIN_TEXT_SIZE = 36
 SUB_TEXT1_SIZE = 20
 SUB_TEXT2_SIZE = 14
-def create_text(text, size, font_type,  x1,y1):
+def create_text(text, size, font_type,  x1,y1, color):
     t.penup()
     t.goto(x1, y1)
     t.pendown()
-    t.color(MAIN_TEXT_COLOR)
+    t.color(color)
     t.write(text, align="center", font=(font_type, size, "bold"))
-    #t.penup()
-    #t.goto(0, -10)
-    #t.pendown()
-    #t.color(SUB_TEXT1_COLOR)
-    #t.write("Дорогие женщины!", align="center", font=("Arial", SUB_TEXT1_SIZE, "italic"))
-    #t.penup()
-    #t.goto(0, -35)
-    #t.pendown()
-    #t.color(SUB_TEXT2_COLOR)
-    #t.write("Пусть каждый день будет ярким!", align="center", font=("Arial", SUB_TEXT2_SIZE, "italic"))
 
 # =====================================================
 # ПАРА 2 — ОБЛАКО
@@ -168,16 +156,18 @@ def create_cloud(cloud_x, cloud_y):
         t.circle(radius)
         t.end_fill()
 
-picture = create_sun(200, 250, 177, 195)
-picture1 = create_petal("pink", 0, -350,0,-180,-20,-200)
-picture2 = create_petal("purple", 300, -350,300,-180,280,-200)
-picture3 = create_petal("blue", -300, -350,-300,-180,-320,-200)
-picture4 = create_cloud(190, -35)
-picture5 = create_cloud(-50, -55)
-picture6 = create_cloud(-300, -35)
-picture7 = create_heart(-300, 10)
-picture8 = create_heart(300, 10)
-picture9 = create_text("С 8 Марта!", 36, "bold",0, 15)
-picture10 = create_text("Дорогие женщины!", 20, "italic",0, -10)
-picture11 = create_text("Пусть каждый день будет ярким!", 14, "italic",0, -35)
+picture_sun = create_sun(200, 250, 177, 195)
+picture_flower1 = create_petal("pink", 0, -350,0,-180,-14,-195)
+picture_flower2 = create_petal("purple", 300, -350,300,-180,286,-195)
+picture_flower3 = create_petal("coral", -300, -350,-300,-180,-315,-195)
+picture_cloud1 = create_cloud(190, -35)
+picture_cloud2 = create_cloud(-50, -55)
+picture_cloud3 = create_cloud(-300, -35)
+picture_heart1 = create_heart(-300, 10)
+picture_heart2 = create_heart(300, 10)
+picture_main_text = create_text("С 8 Марта!", 36, "bold",0, 15, "purple")
+picture_sub_text1 = create_text("Дорогие женщины!", 20, "italic",0, -10,"deeppink")
+picture_sub_text2 = create_text("Пусть каждый день будет ярким!", 14, "italic",0, -35, "blue")
+picture_grass = create_grass(-400, -340, "green")
+
 turtle.done()
