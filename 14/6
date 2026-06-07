@@ -1,0 +1,9 @@
+items = [int(x) for x in input().split()]
+asc_order = sorted(items)
+desc_order = sorted(items, reverse=True)
+original_order = items
+reversed_order = items[::-1]
+print(f"Сортировка по возрастанию: {asc_order}")
+print(f"Сортировка по убыванию: {desc_order}")
+print(f"Оригинальный порядок (от старых к новым): {original_order}")
+print(f"Обратный порядок (от новых к старым): {reversed_order}")
