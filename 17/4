@@ -1,0 +1,18 @@
+def is_password_good(password):
+    if len(password) < 8:
+        return False
+    has_upper = False
+    has_lower = False
+    has_digit = False
+    for i in password:
+        if i.isdigit():
+            has_digit = True
+        if i.isupper():
+            has_upper = True
+        if i.islower():
+            has_lower = True
+
+
+    return has_digit and has_upper and has_lower
+print(is_password_good('aabbCC11OP'))
+print(is_password_good('abC1pu'))
