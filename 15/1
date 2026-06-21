@@ -1,0 +1,47 @@
+maze_string = "н01м00л00з11010м0л00000мф"
+
+index_start = maze_string.index('н')
+index_end = maze_string.index('ф')
+row_start = index_start // 5
+col_start = index_start % 5
+row_end = index_end // 5
+col_end = index_end % 5
+
+print(f"Вход ('н') находится в строке {row_start}, столбце {col_start}")
+print(f"Выход ('ф') находится в строке {row_end}, столбце {col_end}")
+
+distance = abs(row_start - row_end) + abs(col_start - col_end)
+print(f"Манхэттенское расстояние между входом и выходом: {distance} шаг(ов)")
+
+coin_count = maze_string.count('м')
+print(f"Монеты в лабиринте: 🟡x{coin_count}")
+
+initial_hp = 100
+traps_count = maze_string.count('л')
+enemies_count = maze_string.count('з')
+total_damage = (traps_count * 10) + (enemies_count * 50)
+remaining_hp = max(0, initial_hp - total_damage)
+hearts_filled = remaining_hp // 10
+hearts_empty = (initial_hp - remaining_hp) // 10
+hp_bar = ("♥" * hearts_filled) + ("♡" * hearts_empty)
+print(f"Оставшееся здоровье ({remaining_hp} HP): {hp_bar}")
+
+print("\nЛабиринт в виде эмодзи:")
+print("---------------")
+
+emoji= {
+    '0': '⬜',
+    '1': '⬛',
+    'л': '🔷',
+    'м': '🟡',
+    'ф': '🟫',
+    'з': '🐷',
+    'н': '⭐'
+}
+
+for i in range(0, 25, 5):
+    row_chars = maze_string[i:i+5]
+    row_emojis = [emoji[char] for char in row_chars]
+    print("".join(row_emojis))
+
+print("----------------")
