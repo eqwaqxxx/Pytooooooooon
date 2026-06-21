@@ -1,0 +1,27 @@
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+    return True
+
+
+def is_valid_password(password):
+    parts = password.split(':')
+    if len(parts) != 3:
+        return False
+    a = parts[0]
+    b = int(parts[1])
+    c = int(parts[2])
+    is_palindrome = (a == a[::-1])
+    is_b_prime = is_prime(b)
+    is_c_even = (c % 2 == 0)
+    return is_palindrome and is_b_prime and is_c_even
+
+
+
+print(is_valid_password('1221:101:22')) 
+print(is_valid_password('565:30:50'))
+print(is_valid_password('112:7:9'))
+print(is_valid_password('1221:101:22:22'))
