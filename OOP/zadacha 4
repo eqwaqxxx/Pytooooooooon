@@ -1,0 +1,36 @@
+class Monster:
+    def __init__(self, name, hp, power):
+        self.name = name
+        self.hp = hp
+        self.power = power
+      
+    def mutate(self):
+        print(f"Монстр {self.name} мутирует. Сила увеличена")
+        self.power += 5
+        print(f"Урон монстра теперь {self.power}")
+        print("-" * 15)
+
+    def rest(self):
+        print(f"Монстр {self.name} отдохнул в склепе. ХП увеличена")
+        self.hp += 10 
+        print(f"Хп теперь {self.hp}")
+        print("-" * 15)  
+
+
+class Zombie:
+    def __init__(self, name, hp):
+        self.name = name
+        self.hp = hp
+
+    def bite(self, damage):
+        self.hp -= damage  
+        return self.hp     
+
+
+zombie1 = Zombie("Мясник", 100)
+
+incoming_damage = int(input("Введите силу укуса: "))
+
+remaining_hp = zombie1.bite(incoming_damage)
+
+print(f"Остаток здоровья: {remaining_hp}")
